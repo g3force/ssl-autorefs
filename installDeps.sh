@@ -8,28 +8,31 @@ if [ "`id -nu`" != "root" ]; then
   exit 1
 fi
 
-if which dnf>/dev/null; then
+if which dnf 2>/dev/null >/dev/null; then
+  FLAGS="-y"
   echo "Detected dnf package manager"
   echo
   echo erforce
-  dnf install cmake protobuf-compiler qt5-devel luajit-devel gcc-c++ lua-devel
+  dnf $FLAGS install cmake protobuf-compiler qt5-devel luajit-devel gcc-c++ lua-devel
   echo
   echo tigers
-  dnf install java-1.8.0-openjdk-devel maven
+  dnf $FLAGS install java-1.8.0-openjdk-devel maven
   echo
   echo cmdragons
-  dnf install cmake protobuf-compiler wxBase3 wxGTK3-devel
+  dnf $FLAGS install cmake protobuf-compiler wxBase3 wxGTK3-devel
 fi
 
-if which apt-get>/dev/null; then
+if which apt-get 2>/dev/null >/dev/null; then
+  FLAGS="-qq -y"
   echo "Detected apt-get package manager"
+  echo
   echo erforce
-  apt-get install cmake protobuf-compiler qtbase5-dev libluajit-5.1-dev g++
+  apt-get $FLAGS install cmake protobuf-compiler qtbase5-dev libluajit-5.1-dev g++
 
   echo tigers
-  apt-get install openjdk-8-jdk maven
+  apt-get $FLAGS install openjdk-8-jdk maven
 
   echo cmdragons
-  apt-get install libwxbase3.0-dev libwxgtk3.0-dev cmake protobuf-compiler
+  apt-get $FLAGS install libwxbase3.0-dev libwxgtk3.0-dev cmake protobuf-compiler
 fi
 
