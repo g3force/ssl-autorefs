@@ -1,0 +1,9 @@
+[submodule "erforce"]
+	path = erforce
+	url = https://github.com/robotics-erlangen/autoref.git
+[submodule "tigers"]
+	path = tigers
+	url = https://gitlab.tigers-mannheim.de/open-source/AutoReferee.git
+[submodule "cmdragons"]
+	path = cmdragons
+	url = https://github.com/dzhu/ssl-autoref.git
