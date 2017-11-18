@@ -48,3 +48,22 @@ if which apt-get 2>/dev/null >/dev/null; then
   apt-get $FLAGS install libwxbase3.0-dev libwxgtk3.0-dev cmake protobuf-compiler
 fi
 
+if which pacman 2>/dev/null >/dev/null; then
+  FLAGS="--needed"
+  echo "Detected Arch Linux (Pacman)"
+
+  echo "################################"
+  echo "## erforce"
+  echo "################################"
+  pacman -S $FLAGS cmake protobuf qt5-base luajit gcc
+
+  echo "################################"
+  echo "## tigers"
+  echo "################################"
+  pacman -S $FLAGS jdk8-openjdk maven
+
+  echo "################################"
+  echo "## cmdragons"
+  echo "################################"
+  pacman -S $FLAGS wxgtk-common cmake protobuf
+fi
