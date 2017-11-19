@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$1" == "-c" ] || [ "$1" == "--continue" ]; then
+  set +e
+else
+  set -e
+fi
+
 echo "######################################"
 echo "## Build ERforce"
 echo "######################################"
