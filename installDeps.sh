@@ -15,7 +15,7 @@ if which dnf 2>/dev/null >/dev/null; then
   echo "################################"
   echo "## erforce"
   echo "################################"
-  dnf $FLAGS install cmake protobuf-compiler qt5-devel luajit-devel gcc-c++ lua-devel
+  dnf $FLAGS install cmake protobuf-compiler qt5-devel luajit-devel gcc-c++
 
   echo "################################"
   echo "## tigers"
