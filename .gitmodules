@@ -7,3 +7,6 @@
 [submodule "cmdragons"]
 	path = cmdragons
 	url = https://github.com/dzhu/ssl-autoref.git
+[submodule "test/ssl-logtools"]
+	path = test/ssl-logtools
+	url = https://github.com/RoboCup-SSL/ssl-logtools.git
