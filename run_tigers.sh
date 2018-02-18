@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd tigers
-./run.sh
+./run.sh passive
