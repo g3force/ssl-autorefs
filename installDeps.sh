@@ -8,7 +8,9 @@ if [ "`id -nu`" != "root" ]; then
   exit 1
 fi
 
+PKG_MGR_FOUND=0
 if which dnf 2>/dev/null >/dev/null; then
+  PKG_MGR_FOUND=1
   FLAGS="-y"
   echo "Detected dnf package manager"
 
@@ -29,6 +31,7 @@ if which dnf 2>/dev/null >/dev/null; then
 fi
 
 if which apt-get 2>/dev/null >/dev/null; then
+  PKG_MGR_FOUND=1
   FLAGS="-qq -y"
   echo "Detected apt-get package manager"
 
@@ -49,6 +52,7 @@ if which apt-get 2>/dev/null >/dev/null; then
 fi
 
 if which pacman 2>/dev/null >/dev/null; then
+  PKG_MGR_FOUND=1
   FLAGS="--needed"
   echo "Detected Arch Linux (Pacman)"
 
@@ -67,3 +71,9 @@ if which pacman 2>/dev/null >/dev/null; then
   echo "################################"
   pacman -S $FLAGS wxgtk-common cmake protobuf
 fi
+
+if [ $PKG_MGR_FOUND == 0 ]; then
+  echo "Your distribution is not yet supported"
+  exit 1
+fi
+
