@@ -10,3 +10,9 @@
 [submodule "test/ssl-logtools"]
 	path = test/ssl-logtools
 	url = https://github.com/RoboCup-SSL/ssl-logtools.git
+[submodule "test/ssl-refbox"]
+	path = test/ssl-refbox
+	url = https://github.com/RoboCup-SSL/ssl-refbox.git
+[submodule "ssl-autoref-consensus"]
+	path = ssl-autoref-consensus
+	url = https://github.com/RoboCup-SSL/ssl-autoref-consensus.git
