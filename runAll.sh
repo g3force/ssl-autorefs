@@ -1,5 +1,6 @@
 #!/bin/sh
 
-for r in run_*.sh; do
-	./$r &
+impls=`cat activeImplementations.cfg`
+for b in $impls; do
+        ./run_$b.sh &
 done
