@@ -14,6 +14,8 @@ if which dnf 2>/dev/null >/dev/null; then
   FLAGS="-y"
   echo "Detected dnf package manager"
 
+  dnf $FLAGS install git
+
   echo "################################"
   echo "## erforce"
   echo "################################"
@@ -35,6 +37,8 @@ if which apt-get 2>/dev/null >/dev/null; then
   FLAGS="-qq -y"
   echo "Detected apt-get package manager"
 
+  apt-get $FLAGS install git
+
   echo "################################"
   echo "## erforce"
   echo "################################"
@@ -55,6 +59,8 @@ if which pacman 2>/dev/null >/dev/null; then
   PKG_MGR_FOUND=1
   FLAGS="--needed"
   echo "Detected Arch Linux (Pacman)"
+
+  pacman -S $FLAGS git
 
   echo "################################"
   echo "## erforce"
